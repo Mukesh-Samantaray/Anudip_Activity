@@ -1,0 +1,79 @@
+# --------------------------
+# 1. Get all unique items from two sets (union)
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+
+# Union: combines all unique elements from both sets
+unique_items = set1 | set2
+print("1. Unique items from both sets:", unique_items)
+
+# --------------------------
+# 2. Elements present in Set A or B but not both (symmetric difference)
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+
+# Symmetric difference: elements in either set but not both
+exclusive_items = set1 ^ set2
+print("\n2. Items in Set A or B but not both:", exclusive_items)
+
+# --------------------------
+# 3. Check for common elements in two sets (intersection)
+set1 = {10, 20, 30, 40, 50}
+set2 = {60, 70, 80, 90, 10}
+
+# Intersection: returns elements common to both sets
+common_items = set1 & set2
+
+if common_items:
+    print("\n3. Common elements found:", common_items)
+else:
+    print("\n3. No common elements found.")
+
+# --------------------------
+# 4. Remove items from set1 not common to both sets (keep only intersection)
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+
+# Intersecting set1 with set2 to keep only common items
+set1.intersection_update(set2)
+print("\n4. set1 after keeping only common elements:", set1)
+
+# --------------------------
+# 5. Track unique visitors to a website
+visitors = set()
+
+# Ask user how many visitors came
+n = int(input("\n5. How many visitors visited the website? "))
+
+# Take each visitor's name and add to the set
+for i in range(n):
+    name = input(f"Enter name/ID of visitor {i + 1}: ")
+    visitors.add(name)  # sets automatically avoid duplicates
+
+# Display results
+print("\nUnique visitors:", visitors)
+print("Total unique visitors:", len(visitors))
+
+# --------------------------
+# 6. Find common hobbies between two friends
+# Take comma-separated hobby inputs from user
+hobbies1 = input("\n6. Enter hobbies of Friend 1 (comma separated): ")
+hobbies2 = input("Enter hobbies of Friend 2 (comma separated): ")
+
+# Convert input strings to sets by splitting on commas and stripping whitespace
+set_hobbies1 = set(h.strip() for h in hobbies1.split(','))
+set_hobbies2 = set(h.strip() for h in hobbies2.split(','))
+
+# Find common hobbies (intersection)
+common_hobbies = set_hobbies1 & set_hobbies2
+
+# Find all hobbies (union)
+all_hobbies = set_hobbies1 | set_hobbies2
+
+# Find hobbies unique to each friend (symmetric difference)
+unique_hobbies = set_hobbies1 ^ set_hobbies2
+
+# Display results
+print("\nCommon hobbies:", common_hobbies)
+print("All hobbies:", all_hobbies)
+print("Unique hobbies to each friend:", unique_hobbies)

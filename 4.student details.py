@@ -1,0 +1,12 @@
+student_id = input("Enter Student ID: ")
+name = input("Enter Name: ")
+age = input("Enter Age: ")
+city = input("Enter City: ")
+phone = input("Enter Phone Number: ")
+
+print("\n--- Student Details ---")
+print(f"ID: {student_id}")
+print(f"Name: {name}")
+print(f"Age: {age}")
+print(f"City: {city}")
+print(f"Phone Number: {phone}")
